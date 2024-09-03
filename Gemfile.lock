@@ -1,0 +1,151 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    activemodel (7.1.4)
+      activesupport (= 7.1.4)
+    activerecord (7.1.4)
+      activemodel (= 7.1.4)
+      activesupport (= 7.1.4)
+      timeout (>= 0.4.0)
+    activesupport (7.1.4)
+      base64
+      bigdecimal
+      concurrent-ruby (~> 1.0, >= 1.0.2)
+      connection_pool (>= 2.2.5)
+      drb
+      i18n (>= 1.6, < 2)
+      minitest (>= 5.1)
+      mutex_m
+      tzinfo (~> 2.0)
+    addressable (2.8.7)
+      public_suffix (>= 2.0.2, < 7.0)
+    amatch (0.4.1)
+      mize
+      tins (~> 1.0)
+    audited (5.7.0)
+      activerecord (>= 5.2, < 8.0)
+      activesupport (>= 5.2, < 8.0)
+    base64 (0.2.0)
+    bigdecimal (3.1.8)
+    binding_of_caller (1.0.1)
+      debug_inspector (>= 1.2.0)
+    byebug (11.1.3)
+    coderay (1.1.3)
+    concurrent-ruby (1.3.4)
+    connection_pool (2.4.1)
+    debug_inspector (1.2.0)
+    diff-lcs (1.5.1)
+    domain_name (0.6.20240107)
+    dotenv (2.8.1)
+    drb (2.2.1)
+    ffi (1.17.0)
+    ffi-compiler (1.3.2)
+      ffi (>= 1.15.5)
+      rake
+    hashdiff (1.1.1)
+    highline (2.1.0)
+    http (5.2.0)
+      addressable (~> 2.8)
+      base64 (~> 0.1)
+      http-cookie (~> 1.0)
+      http-form_data (~> 2.2)
+      llhttp-ffi (~> 0.5.0)
+    http-cookie (1.0.7)
+      domain_name (~> 0.5)
+    http-form_data (2.3.0)
+    i18n (1.14.5)
+      concurrent-ruby (~> 1.0)
+    llhttp-ffi (0.5.0)
+      ffi-compiler (~> 1.0)
+      rake (~> 13.0)
+    logger (1.6.1)
+    method_source (1.1.0)
+    minitest (5.25.1)
+    mize (0.6.0)
+    mutex_m (0.2.0)
+    nokogiri (1.15.6-x86_64-linux)
+      racc (~> 1.4)
+    omg-attrs (0.1.1)
+    omg-audit-group (0.1.4)
+      activerecord (>= 5.2, < 7.2)
+      audited (>= 4.9, < 6.0)
+    omg-thor-ext (0.1.0)
+    pastel (0.8.0)
+      tty-color (~> 0.5)
+    pry (0.14.2)
+      coderay (~> 1.1)
+      method_source (~> 1.0)
+    pry-byebug (3.10.1)
+      byebug (~> 11.0)
+      pry (>= 0.13, < 0.15)
+    pry-stack_explorer (0.6.1)
+      binding_of_caller (~> 1.0)
+      pry (~> 0.13)
+    public_suffix (5.1.1)
+    racc (1.8.1)
+    rake (13.2.1)
+    rspec (3.13.0)
+      rspec-core (~> 3.13.0)
+      rspec-expectations (~> 3.13.0)
+      rspec-mocks (~> 3.13.0)
+    rspec-core (3.13.1)
+      rspec-support (~> 3.13.0)
+    rspec-expectations (3.13.2)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.13.0)
+    rspec-mocks (3.13.1)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.13.0)
+    rspec-support (3.13.1)
+    sync (0.5.0)
+    text (1.3.1)
+    thor (1.3.2)
+    timeout (0.4.1)
+    tins (1.33.0)
+      bigdecimal
+      sync
+    tty-color (0.6.0)
+    tty-cursor (0.7.1)
+    tty-prompt (0.23.1)
+      pastel (~> 0.8)
+      tty-reader (~> 0.8)
+    tty-reader (0.9.0)
+      tty-cursor (~> 0.7)
+      tty-screen (~> 0.8)
+      wisper (~> 2.0)
+    tty-screen (0.8.2)
+    tty-spinner (0.9.3)
+      tty-cursor (~> 0.7)
+    tzinfo (2.0.6)
+      concurrent-ruby (~> 1.0)
+    wisper (2.0.1)
+    zeitwerk (2.6.18)
+
+PLATFORMS
+  x86_64-linux
+
+DEPENDENCIES
+  activesupport
+  amatch
+  dotenv
+  hashdiff
+  highline
+  http
+  logger
+  nokogiri
+  omg-attrs
+  omg-audit-group
+  omg-thor-ext
+  pry
+  pry-byebug
+  pry-stack_explorer
+  rspec
+  text
+  thor
+  tty-cursor
+  tty-prompt
+  tty-spinner
+  zeitwerk
+
+BUNDLED WITH
+   2.2.33

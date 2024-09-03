@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+require 'pry'
+
+current_dir = File.expand_path(__dir__)
+
+load File.join(current_dir, 'cli')
+Cli.setup
+
+Pry.start
