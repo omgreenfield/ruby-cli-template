@@ -14,9 +14,11 @@ gem 'nokogiri'
 gem 'text'
 gem 'zeitwerk'
 
-# OMG
+# Gems created by me (Matthew Greenfield, AKA OMGreenfield)
+# Allows easily querying objects - repo: https://github.com/omgreenfield/omg-attrs
 gem 'omg-attrs'
-gem 'omg-audit-group'
+# Makes Thor CLIs behave similar to other typical CLIs - repo: https://github.com/omgreenfield/omg-thor-ext
+# Original source code by Matt Brictson: https://github.com/mattbrictson/gem/blob/main/lib/example/thor_ext.rb
 gem 'omg-thor-ext'
 
 # Debugging
