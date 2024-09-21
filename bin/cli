@@ -21,7 +21,7 @@ class Cli < Thor
     ))
   end
 
-  desc 'browse', 'Opens the trunk directory in the file browser'
+  desc 'browse', 'Load CLI and start a Pry session'
   def browse
     binding.pry
   end
