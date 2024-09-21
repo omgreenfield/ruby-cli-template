@@ -1,4 +1,7 @@
 #!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require 'bundler/setup'
 require 'pry'
 
 current_dir = File.expand_path(__dir__)
@@ -6,4 +9,4 @@ current_dir = File.expand_path(__dir__)
 load File.join(current_dir, 'cli')
 Cli.setup
 
-Pry.start
+Pry.start(__FILE__)
