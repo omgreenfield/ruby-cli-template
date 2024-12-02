@@ -9,4 +9,4 @@ current_dir = File.expand_path(__dir__)
 load File.join(current_dir, 'cli')
 Cli.setup
 
-Pry.start(__FILE__)
+Pry.start
