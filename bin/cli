@@ -34,8 +34,7 @@ class Cli < Thor
 
     def setup
       Dotenv.load
-      current_dir = File.expand_path(__dir__)
-      loader.push_dir(File.join(current_dir, '../src'))
+      loader.push_dir(current_dir.join('../src'))
       loader.enable_reloading
       loader.setup
     end
@@ -43,11 +42,19 @@ class Cli < Thor
     def loader
       @loader ||= Zeitwerk::Loader.new
     end
+
+    def current_dir
+      @current_dir ||= Pathname.new(File.expand_path(__dir__))
+    end
+
+    def root
+      @root ||= current_dir.join('..')
+    end
   end
 end
 
 Cli.start if __FILE__ == $PROGRAM_NAME
 
 def reload!
-  Cli.reload
+  Cli.loader.reload
 end
