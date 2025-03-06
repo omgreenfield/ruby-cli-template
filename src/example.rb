@@ -4,14 +4,14 @@ class Example
   end
 
   def initialize(**args)
-    puts args
+    @args = args
   end
 
   def call
-    
+    puts "Example#call with args: #{args}"
   end
 
   private
 
-  attr_reader :instance_var
+  attr_reader :args
 end
