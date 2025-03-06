@@ -5,26 +5,25 @@ source 'https://rubygems.org'
 # General
 gem 'activesupport' # Convenience methods/classes
 # gem 'amatch' # String similarity and fuzzy matching
-# gem 'dotenv' # Development/test environment variables
+gem 'dotenv' # Development/test environment variables
 # gem 'hashdiff' # Diff hashes
 # gem 'http' # Make HTTP requests
-# gem 'logger' # Log
+# gem 'logger' # Logging
 # gem 'nokogiri' # HTML/XML parsing
 # gem 'text' # Text processing algorithms
-gem 'zeitwerk' # Code autoloading
+gem 'zeitwerk' # Code auto-loading
 
 # CLI
 gem 'thor'         # Easily build CLIs
 gem 'omg-thor-ext' # Make Thor behave like typical CLIs
+#
 ## Option 1: Separate gems for separate use cases
-# gem 'tty-cursor' # Terminal cursor positioning
+# gem 'tty-cursor'  # Terminal cursor positioning
 # gem 'tty-spinner' # Spinners in terminal
-### Option 2.1: choose 1
-# gem 'highline' # Prompts
-### Option 2.2
-# gem 'tty-prompt' # Interactive command line prompts
+# gem 'tty-prompt'  # Interactive command line prompts
+#
 ## Option 2: All in 1
-# gem 'cli-ui'       # All-in-one CLI UI components
+# gem 'cli-ui'      # All-in-one CLI UI components
 
 group :development do
   gem 'rubocop', require: false # Ruby code style checking and formatting
