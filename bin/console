@@ -2,7 +2,7 @@
 # frozen_string_literal: true
 
 require 'bundler/setup'
-require 'pry'
+Bundler.require
 
 current_dir = File.expand_path(__dir__)
 
