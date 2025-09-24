@@ -1,11 +1,6 @@
 #!/usr/bin/env ruby
 
-require 'bundler/setup'
-require 'dotenv'
-require 'pry-byebug'
-require 'thor'
-require 'thor_ext'
-require 'zeitwerk'
+require_relative '../config/app'
 
 class Cli < Thor
   extend ThorExt::Start
@@ -25,36 +20,13 @@ class Cli < Thor
   def browse
     binding.pry
   end
-
-  class << self
-    def start
-      setup
-      super
-    end
-
-    def setup
-      Dotenv.load
-      loader.push_dir(current_dir.join('../src'))
-      loader.enable_reloading
-      loader.setup
-    end
-
-    def loader
-      @loader ||= Zeitwerk::Loader.new
-    end
-
-    def current_dir
-      @current_dir ||= Pathname.new(File.expand_path(__dir__))
-    end
-
-    def root
-      @root ||= current_dir.join('..')
-    end
-  end
 end
 
-Cli.start if __FILE__ == $PROGRAM_NAME
+if __FILE__ == $PROGRAM_NAME
+  App.load
+  Cli.start
+end
 
 def reload!
-  Cli.loader.reload
+  App.loader.reload
 end
