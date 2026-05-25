@@ -1,13 +1,13 @@
-require 'bundler/setup'
+require "bundler/setup"
 
 Bundler.require
 
-require 'active_support/all'
-require 'dotenv'
-require 'pry-byebug'
-require 'thor'
-require 'thor_ext'
-require 'zeitwerk'
+require "active_support/all"
+require "dotenv"
+require "pry-byebug"
+require "thor"
+require "thor_ext"
+require "zeitwerk"
 
 class App
   def self.start
@@ -30,7 +30,7 @@ class App
     return if @loaded
 
     Dotenv.load
-    loader.push_dir(root.join('src'))
+    loader.push_dir(root.join("src"))
     loader.enable_reloading
     # loader.inflector.inflect(
     #   "llm" => "LLM"
@@ -49,7 +49,7 @@ class App
   end
 
   def self.root
-    @root ||= Pathname.new(current_dir.join('..'))
+    @root ||= Pathname.new(current_dir.join(".."))
   end
 
   def self.log(*args)
@@ -59,7 +59,7 @@ class App
 
   def self.logger
     @logger ||= begin
-      FileUtils.mkdir_p('log')
+      FileUtils.mkdir_p("log")
       Logger.new("log/#{app_name}.log")
     end
   end
