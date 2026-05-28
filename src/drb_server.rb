@@ -20,11 +20,21 @@ class DrbServer
   end
 
   # @example
-  #   server['Util::Json']
-  def [](path)
-    path.constantize
+  #   server["Util::Json", "schema_for", some_object]
+  def [](*)
+    constant_call(*)
   end
-  alias get []
+
+  private def constant_call(const_path, method_name, ...)
+    receiver = resolve_constant(const_path)
+    receiver.public_send(method_name, ...)
+  end
+
+  private def resolve_constant(const_path)
+    const_path.split("::").reject(&:empty?).reduce(Object) do |scope, name|
+      scope.const_get(name)
+    end
+  end
 
   private def print_client_example
     puts
@@ -32,6 +42,7 @@ class DrbServer
     puts "=" * 60
     puts CodeRay.scan(client_example, :ruby).terminal
     puts "=" * 60
+    puts
   end
 
   private def client_example
@@ -41,16 +52,5 @@ class DrbServer
       server = DRbObject.new_with_uri(url)
       server.Util::Json.schema_for(some_object)
     RUBY
-  end
-
-  # Construct instance methods for the App and everything else that Zeitwerk loaded
-  #
-  # @example
-  #   server.App.loader
-  #   server.Util::Json.schema_for(some_object)
-  App.consts.each do |const|
-    define_method(const.to_s) do
-      const
-    end
   end
 end

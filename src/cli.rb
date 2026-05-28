@@ -18,6 +18,6 @@ class Cli < Thor
   desc "drb", "Load a DRb server, allowing calls from other processes"
   option :port, aliases: "-p", type: :numeric, required: false, desc: "DRBServer port", default: 8787
   def drb
-    DrbServer.new(options[:port]).start
+    DrbServer.new(port: options[:port]).call
   end
 end
