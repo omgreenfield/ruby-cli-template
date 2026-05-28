@@ -19,6 +19,7 @@ class App
   end
 
   # rubocop:disable Lint/UselessMethodDefinition, Style/RedundantInitialize
+  # Make `initialize` private
   private def initialize = super
   # rubocop:enable Lint/UselessMethodDefinition, Style/RedundantInitialize
 
@@ -66,6 +67,11 @@ class App
 
   def self.app_name
     root.basename.to_s
+  end
+
+  def self.consts
+    paths = ["App"] + App.loader.all_expected_cpaths.values.reject { |path| path == "Object" }
+    paths.map(&:constantize)
   end
 end
 

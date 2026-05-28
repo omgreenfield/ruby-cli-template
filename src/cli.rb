@@ -14,4 +14,10 @@ class Cli < Thor
   def browse
     binding.pry
   end
+
+  desc "drb", "Load a DRb server, allowing calls from other processes"
+  option :port, aliases: "-p", type: :numeric, required: false, desc: "DRBServer port", default: 8787
+  def drb
+    DrbServer.new(options[:port]).start
+  end
 end
