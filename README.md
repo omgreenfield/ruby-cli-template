@@ -2,7 +2,7 @@ This template is for building a Ruby CLI using [Thor](https://github.com/rails/t
 
 - An extension (`omg-thor-ext`) to make Thor behave more like other CLIs (see [Matt Brictson's blog about it](https://mattbrictson.com/blog/fixing-thor-cli-behavior))
 - Helper scripts
-  - `bin/install`: installs dependencies and copies `.env.example` to `.env`
+  - `bin/setup`: installs dependencies and copies `.env.example` to `.env`
   - `bin/console`: runs a `pry` console with everything in `src` loaded
   - `bin/cli`: loads up the CLI
 
@@ -19,7 +19,7 @@ Go through `Gemfile` and uncomment gems you want to include
 ## (3) Installation
 
 ```sh
-bin/install
+bin/setup
 ```
 
 ## (3) Usage

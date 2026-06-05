@@ -10,8 +10,8 @@ class Cli < Thor
                             unnamed_optional_arg:)
   end
 
-  desc "browse", "Load CLI and start a Pry session"
-  def browse
+  desc "pry", "Load CLI and start a Pry session"
+  def pry
     binding.pry
   end
 
