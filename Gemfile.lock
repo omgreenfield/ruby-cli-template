@@ -27,6 +27,7 @@ GEM
     drb (2.2.1)
     i18n (1.14.6)
       concurrent-ruby (~> 1.0)
+    jmespath (1.6.2)
     json (2.10.1)
     language_server-protocol (3.17.0.4)
     lint_roller (1.1.0)
@@ -104,6 +105,7 @@ PLATFORMS
 DEPENDENCIES
   activesupport
   dotenv
+  jmespath
   omg-thor-ext
   pry
   pry-byebug
